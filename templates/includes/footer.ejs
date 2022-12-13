@@ -1,0 +1,29 @@
+<div class="ant-footer">
+  <!-- 社交 -->
+  <div class="ant-social">
+    <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
+      <% if (site.customConfig[item]) { %>
+        <a class="ant-social-link" href="<%= site.customConfig[item] %>" target="_blank">
+          <i class="fa-brands fa-<%= item %>"></i>
+        </a>
+      <% } %>
+    <% }) %>
+  </div>
+  <!-- 网站信息 RSS -->
+  <div class="website-information">
+    <%- themeConfig.footerInfo %> | <a class="rss" href="<%= themeConfig.domain %>/atom.xml" target="_blank">RSS</a>
+  </div>
+  <!-- 友情链接 -->
+  <div class="friend-chain">
+    <% if (site.customConfig.friends) { %>
+      <span>友链: </span>
+      <% site.customConfig.friends.forEach(function(friend) { %>
+        <a href="<%= friend.siteLink %>" target="_blank">[<%= friend.siteName %>]</a>
+      <% }); %>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>

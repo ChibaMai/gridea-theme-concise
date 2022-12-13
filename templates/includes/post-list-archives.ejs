@@ -1,0 +1,27 @@
+<% let years = []; 
+  posts.forEach((item) => { 
+    const year = item.date.substring(0, 4); 
+    if (!years.includes(year)) { 
+      years.push(year); 
+    } 
+  }); 
+%>
+
+<!-- 归档 -->
+<div class="ant-archives-container">
+  <div class="ant-archives">
+    <h2 class="ant-archives-father">归档</h2>
+    <% years.forEach(function(year) { %>
+      <!-- 标题年 -->
+      <h2 class="ant-year"><%- year %></h2>
+      <% posts.forEach(function(post) { %>
+        <%if (post.date.indexOf(year) !== -1) { %>
+          <article class="ant-archives-list">
+            <a href="<%= post.link %>"><h2 class="ant-archives-title"><%= post.title %></h2></a>
+            <small><%= post.dateFormat %></small>
+          </article>
+        <% } %>
+      <% }); %>
+    <% }); %>
+  </div>
+</div>

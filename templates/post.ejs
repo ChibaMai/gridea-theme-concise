@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+</head>
+<body>
+  <div class="__next">
+    <section class="ant-layout">
+      <!-- 菜单栏 -->
+      <%- include('./includes/header') %>
+      
+      <!-- 内容 -->
+      <main class="ant-layout-content scroll-bar main">
+        <div class="ant-post-article">
+          <article class="ant-post-detail">
+            <!-- 标题 -->
+            <h1 class="ant-detail-post-title"><%= post.title %></h1>
+            <!-- 时间 标签 -->
+            <div class="ant-detail-post-info">
+              <time class="ant-detail-post-time"><%= post.dateFormat %></time>
+              <% post.tags.forEach(function(tag) { %>
+                <a href="<%= tag.link %>" class="ant-detail-post-tags"><%= tag.name %></a>
+              <% }); %>
+            </div>
+            <!-- 文章图片 -->
+            <% if (themeConfig.showFeatureImage && post.feature) { %>
+              <div class="ant-detail-post-feature-image" style="background-image: url('<%= post.feature %>')">
+              </div>
+            <% } %>
+            <!-- 文章内容 -->
+            <div class="ant-detail-post-content">
+              <%- post.content %>
+            </div>
+          </article>
+        </div>
+
+        <% if (post.nextPost && !post.hideInList) { %>
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="<%= post.nextPost.link %>">
+              <h3 class="post-title">
+                <%= post.nextPost.title %>
+              </h3>
+            </a>
+          </div>  
+        <% } %>
+
+        <!-- 评论 GitHub问题评论提交 -->
+        <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+          <% if (commentSetting.commentPlatform === 'gitalk') { %>
+            <%- include('./includes/gitalk') %>
+          <% } %>
+
+          <% if (commentSetting.commentPlatform === 'disqus') { %>
+            <%- include('./includes/disqus') %>
+          <% } %>
+        <% } %>
+
+      </main>
+    </section>
+  </div>
+</body>
+</html>
+
+<script>
+  // 标签随机颜色
+  $(".ant-detail-post-tags").each((index, element) => {
+    let red = getRand(0, 255);
+    let green = getRand(0, 255);
+    let blue = getRand(0, 255);
+    let alpha = Math.floor(Math.random() * 5 + 1);
+    $(".ant-detail-post-tags")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
+  })
+
+  function getRand(a, b){
+    return Math.floor(Math.random() * (b - a) + 1) + a
+  }
+</script>

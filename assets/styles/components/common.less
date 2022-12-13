@@ -1,0 +1,117 @@
+// 时间 标签
+:is(
+  .ant-post-info
+) {
+  font-size: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+:is(
+  .ant-post-time,
+  .ant-detail-post-time
+) {
+  color: @ant-post-time-color;
+  margin-right: 5px;
+}
+
+:is(
+  .ant-post-tag,
+  .ant-detail-post-tags
+) {
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  // border-radius: 10px;
+  background-color: @ant-post-tag-background;
+  color: @ant-post-tag-color;
+  display: inline-block;
+  font-size: @ant-post-size;
+  // font-weight: 700;
+  line-height: 10px;
+  padding-inline: 5px;
+  padding-block: 5px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+:where(
+  .ant-post-tag,
+  .ant-tag,
+  .ant-detail-post-tags
+):hover {
+  color: @ant-post-tag-hover;
+}
+
+// 内容过度动画
+:where(
+  .ant-menu-item,
+  .ant-post,
+  .ant-archives,
+  .ant-tags,
+  .ant-tag,
+  .ant-post-detail
+) {
+  position: relative;
+  display: block;
+  margin: 0;
+  // white-space: nowrap;
+  // cursor: pointer;
+  // transition: border-color 0.3s,background 0.3s,padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+:is(
+  .ant-post-container,
+  .ant-archives-container, 
+  .ant-tags-container,
+  .ant-post-article
+) {
+  padding-block: 10px;
+  padding-inline: 25px;
+}
+
+:is(
+  .ant-post,
+  .ant-archives, 
+  .ant-tags,
+  .ant-tag,
+  .ant-post-detail
+) {
+  margin-block: 20px;
+  padding: 25px;
+  border: 1px solid #c1c0bd;
+  box-shadow: -1px 5px 35px -9px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+
+  &:hover {
+    box-shadow: -1px 5px 35px -9px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// 下划线
+:where(
+  .ant-tags-title,
+  .ant-post-title,
+  .readmore-link,
+  .ant-archives-father,
+  .ant-tag-title,
+  .ant-detail-post-title
+) {
+  background-image: linear-gradient(5deg, transparent 65%, #0071de 80%, transparent 90%), linear-gradient(165deg, transparent 5%, #0071de 15%, transparent 25%), linear-gradient(165deg, transparent 45%, #0071de 55%, transparent 65%), linear-gradient(15deg, transparent 25%, #0071de 35%, transparent 50%);
+  background-repeat: repeat-x;
+  background-size: 4px 3px;
+  background-position: 0 100%;
+  text-decoration: none;
+  color: #1400ee;
+}
+
+:is(
+  .ant-tags-title,
+  .ant-archives-father
+) {
+  font-size: 30px;
+  margin-bottom: 10px;
+}

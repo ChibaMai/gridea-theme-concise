@@ -1,0 +1,44 @@
+<div class="ant-post-container">
+  <% posts.forEach(function(post) { %>
+    <article class="ant-post">
+      <!-- 标题 -->
+      <a href="<%= post.link %>" class="ant-post-title"><%= post.title %></a>
+      <!-- 时间 标签 -->
+      <div class="ant-post-info">
+        <time class="ant-post-time">发布于 · <%= post.dateFormat %> </time>
+        <% post.tags.forEach(function(tag) { %>
+          <a href="<%= tag.link %>" class="ant-post-tag"><%= tag.name %></a>
+        <% }); %>
+      </div>
+      <!-- 图片 -->
+      <!-- <% if (themeConfig.showFeatureImage && post.feature) { %>
+        <a href="<%= post.link %>" class="ant-post-feature-image" style="background-image: url('<%= post.feature %>')">
+        </a>
+      <% } %> -->
+      <div class="ant-post-abstract">
+        <%- post.abstract %>
+      </div>
+      <!-- 阅读更多 -->
+      <div class="ant-row">
+        <a href="<%= post.link %>" class="readmore-link">
+          <button class="readmore-link">Read More</button>
+        </a>
+      </div>
+    </article>
+  <% }); %>
+</div>
+
+<script>
+  // 标签随机颜色
+  $(".ant-post-tag").each((index, element) => {
+    let red = getRand(0, 255);
+    let green = getRand(0, 255);
+    let blue = getRand(0, 255);
+    let alpha = Math.floor(Math.random() * 5 + 1);
+    $(".ant-post-tag")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
+  })
+
+  function getRand(a, b){
+    return Math.floor(Math.random() * (b - a) + 1) + a
+  }
+</script>

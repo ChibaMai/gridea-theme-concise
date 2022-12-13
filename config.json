@@ -1,0 +1,107 @@
+{
+  "name": "Concise",
+  "version": "1.0",
+  "author": "ChibaMai",
+  "repository": "https://github.com/ChibaMai/gridea-theme-concise",
+  "customConfig": [{
+    "name": "contentMaxWidth",
+    "label": "内容区最大宽度",
+    "group": "外观 | 渲染",
+    "value": "800px",
+    "type": "input",
+    "note": "可填像素类型（如：320px）或百分比类型（如：38.2%）"
+  },
+  {
+    "name": "theme",
+    "label": "主题配色方案",
+    "group": "外观 | 渲染",
+    "value": "light",
+    "type": "select",
+    "note": "预置主题配色方案",
+    "options": [
+      {
+        "label": "light",
+        "value": "light"
+      },
+      {
+        "label": "dark",
+        "value": "dark"
+      }
+  ]},
+  {
+    "name": "github",
+    "label": "Github",
+    "group": "社交",
+    "value": "",
+    "type": "input",
+    "note": "链接地址"
+  },
+  {
+    "name": "twitter",
+    "label": "Twitter",
+    "group": "社交",
+    "value": "",
+    "type": "input",
+    "note": "链接地址"
+  },
+  {
+    "name": "weibo",
+    "label": "微博",
+    "group": "社交",
+    "value": "",
+    "type": "input",
+    "note": "链接地址"
+  },
+  {
+    "name": "zhihu",
+    "label": "知乎",
+    "group": "社交",
+    "value": "",
+    "type": "input",
+    "note": "链接地址"
+  },
+  {
+    "name": "facebook",
+    "label": "Facebook",
+    "group": "社交",
+    "value": "",
+    "type": "input",
+    "note": "链接地址"
+  },
+  {
+    "name": "friends",
+    "label": "友链",
+    "group": "友链",
+    "type": "array",
+    "value": [],
+    "arrayItems": [
+      { "label": "名称", "name": "siteName", "type": "input", "value": "" },
+      { "label": "链接", "name": "siteLink", "type": "input", "value": "" }
+    ],
+    "note": "将显示在侧边栏"
+  },
+  {
+    "name": "customCss",
+    "label": "自定义CSS",
+    "group": "自定义样式",
+    "value": "",
+    "type": "textarea",
+    "note": ""
+  },
+  {
+    "name": "ga",
+    "label": "Google Analytics 跟踪 ID",
+    "group": "统计",
+    "value": "",
+    "type": "input",
+    "note": "UA-xxxxxxxxx-x"
+  },
+  {
+    "name": "ba",
+    "label": "百度统计 token",
+    "group": "统计",
+    "value": "",
+    "type": "input",
+    "note": ""
+  }]
+}

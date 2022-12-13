@@ -1,0 +1,76 @@
+.ant-layout-sider {
+  position: fixed;
+  flex: 0 0 @ant-layout-width;
+  width: @ant-layout-width;
+  height: 100%;
+  min-width: @ant-layout-width;
+  max-width: @ant-layout-width;
+  background-color: rebeccapurple;
+  box-shadow: @ant-layout-shadow;
+}
+
+.ant-layout-sider-light {
+  background-color: transparent;
+  border-right: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+// 标题 头像 描述
+.ant-header {
+  margin: 20px 10px;
+
+  a {
+    display: inline-block;
+    width: @ant-header-avatar;
+    height: @ant-header-avatar;
+    user-select: none;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ant-title {
+    float: right;
+    width: calc(100% - 60px);
+    line-height: 60px;
+    text-align: center;
+    font-size: @ant-header-title;
+    display: block;
+  }
+
+  .ant-description {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+// 菜单
+.sider-menu {
+
+  .ant-menu-container {
+    padding: 0 20px;
+  }
+
+  li {
+    line-height: 40px;
+    margin-inline: 4px;
+    margin-block: 4px;
+    padding-inline: 15px;
+
+    &:where(.ant-menu-item):hover {
+      background-color: @ant-menu-item-hover;
+      color: @ant-menu-item-color;
+    }
+  }
+
+  .ant-menu-item {
+    border-radius: @ant-menu-item-radius;
+    font-size: @ant-menu-item-size;
+  }
+
+  a {
+    display: block;
+  }
+}

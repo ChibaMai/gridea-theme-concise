@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./includes/head', { siteTitle: `${tag.name} | ${themeConfig.siteName}` }) %>
+</head>
+<body>
+  <div class="__next">
+    <section class="ant-layout">
+      <!-- 菜单栏 -->
+      <%- include('./includes/header') %>
+      
+      <!-- 内容 -->
+      <main class="ant-layout-content scroll-bar main">
+        <div class="ant-tag-container">
+          <div class="ant-post" style="margin-bottom: 0;margin: 20px 25px 0 25px;">
+            <h2 class="ant-tag-title">标签：#<%= tag.name %></h2> 
+          </div>
+          <%- include("./includes/post-list.ejs") %> 
+          <%- include('./includes/pagination') %>
+      </div>
+      </main>
+    </section>
+  </div>
+  <script>
+    // 标签随机颜色
+  //   $(".ant-tag").each((index, element) => {
+  //     let red = getRand(0, 255);
+  //     let green = getRand(0, 255);
+  //     let blue = getRand(0, 255);
+  //     let alpha = Math.floor(Math.random() * 6 + 4);
+  //     $(".ant-tag")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
+  //   })
+
+  //   function getRand(a, b){
+  //     return Math.floor(Math.random() * (b - a) + 1) + a
+  //   }
+  // </script>
+</body>
+</html>

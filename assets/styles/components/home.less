@@ -1,0 +1,70 @@
+.ant-layout-content {
+  width: calc(100% - 240px);
+  margin-left: @ant-layout-content;
+
+  // 标题
+  .ant-post-title {
+    font-size: @ant-post-title-size;
+    color: @ant-post-title-color;
+  }
+
+  // 图片
+  .ant-post-feature-image {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+
+  // 内容
+  .ant-post-abstract {
+    font-size: @ant-post-abstract;
+  }
+
+  // ant-row 阅读更多
+  .ant-row {
+    font-size: @ant-post-ant-row;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .readmore-link {
+    background-position: 0 90%;
+
+    button {
+      border-bottom-left-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 225px;
+      transition: all 235ms ease 0s;
+      box-shadow: 15px 28px 25px -18px rgb(0 0 0 / 20%);
+      transition: all 235ms ease-in-out 0s;
+      align-self: center;
+      background: transparent;
+      color: #41403e;
+      cursor: pointer;
+      display: inline-block;
+      outline: none;
+      padding: 8px 5px;
+    }
+  }
+  
+  // 翻页
+  .pagination-container {
+  }
+  
+}
+
+.pagination-container {
+  padding: 24px 32px 32px;
+  overflow: hidden;
+  .prev-page {
+    float: left;
+  }
+  .next-page {
+    float: right;
+  }
+}

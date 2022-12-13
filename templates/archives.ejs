@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+<body>
+  <div class="__next">
+    <section class="ant-layout">
+      <!-- 菜单栏 -->
+      <%- include('./includes/header') %>
+      
+      <!-- 内容 -->
+      <main class="ant-layout-content scroll-bar main">
+        <%- include('./includes/post-list-archives') %>
+        <%- include('./includes/pagination') %>
+      </main>
+    </section>
+  </div>
+</body>
+</html>
