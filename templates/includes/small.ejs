@@ -1,0 +1,54 @@
+<style>
+  .ant-small-menu {
+    position: fixed;
+    top: 7px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    display: none;
+  }
+
+  .ant-small {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+  }
+</style>
+
+<div class="ant-small-menu">
+  <i class="fa-solid fa-bars"></i>
+</div>
+<div class="ant-small"></div>
+
+<script>
+$(function () {
+
+  $(window).resize(function () {
+    let resizeWidth = $("body").width();
+
+    if (resizeWidth >= 750) {
+      $(".ant-layout-sider-light").attr("style", "")
+    }
+  });
+
+  $(".ant-small-menu").click(function (e) { 
+    e.preventDefault();
+    
+    $(".ant-small").fadeIn(500);
+    $(".ant-layout-sider-light").css("margin-inline-start", "0");
+    $("body").css("overflow", "hidden")
+  });
+
+  $(".ant-small").click(function (e) { 
+    e.preventDefault();
+    
+    $(this).fadeOut(500);
+    $("body").attr("style", "");
+    $(".ant-layout-sider-light").css("margin-inline-start", "-250px");
+  });
+});
+</script>

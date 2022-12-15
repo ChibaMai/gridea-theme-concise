@@ -1,17 +1,18 @@
 <aside class="ant-layout-sider ant-layout-sider-light">
   <!-- avatar title description -->
   <div class="ant-header">
-    <a href="/">
-      <img class="avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt="">
-    </a>
-    <h1 class="ant-title">
-      <%= themeConfig.siteName %>
-    </h1>
+    <div style="height: 60px;">
+      <a href="/">
+        <img class="avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt="">
+      </a>
+      <h1 class="ant-title">
+        <%= themeConfig.siteName %>
+      </h1>
+    </div>
     <p class="ant-description">
       <%- themeConfig.siteDescription %>
     </p>
   </div>
-  <hr>
   <!-- menu container -->
   <div class="sider-menu">
     <ul class="ant-menu-container">

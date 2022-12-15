@@ -5,7 +5,10 @@
       <a href="<%= post.link %>" class="ant-post-title"><%= post.title %></a>
       <!-- 时间 标签 -->
       <div class="ant-post-info">
-        <time class="ant-post-time">发布于 · <%= post.dateFormat %> </time>
+        <time class="ant-post-time">
+          <i class="fa-solid fa-calendar-days"></i> 
+          <%= post.dateFormat %>
+        </time>
         <% post.tags.forEach(function(tag) { %>
           <a href="<%= tag.link %>" class="ant-post-tag"><%= tag.name %></a>
         <% }); %>
@@ -16,7 +19,11 @@
         </a>
       <% } %> -->
       <div class="ant-post-abstract">
-        <%- post.abstract %>
+        <% if(post.abstract) { %>
+          <%- post.abstract %>
+        <% } %> <% { %>
+          <%- post.description %>
+        <% } %>
       </div>
       <!-- 阅读更多 -->
       <div class="ant-row">
@@ -24,6 +31,12 @@
           <button class="readmore-link">Read More</button>
         </a>
       </div>
+      <!-- 置顶  post.isTop -->
+      <% if (post.isTop) {%>
+        <div class="ant-isTop">
+          <i class="fa-solid fa-bookmark"></i>
+        </div>
+      <% } %>
     </article>
   <% }); %>
 </div>

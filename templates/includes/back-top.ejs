@@ -1,0 +1,45 @@
+<style>
+  .back-to-top {
+    width: 45px;
+    height: 35px;
+    position: fixed;
+    right: 26px;
+    bottom: 50px;
+    z-index: 9;
+    background-color: rgb(85, 104, 246, .5);
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+  }
+</style>
+
+<div class="back-to-top top" style="display: none">
+  <i class="fa-solid fa-arrow-up-to-line"></i>
+</div>
+
+<script>
+  $(function () {
+    $('.back-to-top').hide();
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= 200) {
+        $('.back-to-top').fadeIn();
+      }
+      else {
+        $('.back-to-top').fadeOut();
+      }
+    });
+  });
+
+  $('.back-to-top').click(function () {
+    $('html,body').stop().animate({ 
+      scrollTop: 0 
+    }, '0.2s cubic-bezier(1, 0.14, 1, 0.56)');
+  });
+</script>

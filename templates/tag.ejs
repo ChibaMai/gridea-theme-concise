@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+  lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
+  data-theme="<%- site.customConfig.theme %>"
+>
 <head>
   <%- include('./includes/head', { siteTitle: `${tag.name} | ${themeConfig.siteName}` }) %>
 </head>
@@ -19,7 +22,9 @@
           <%- include('./includes/pagination') %>
       </div>
       </main>
+      <%- include('./includes/small') %>
     </section>
+    <%- include('./includes/back-top') %> 
   </div>
   <script>
     // 标签随机颜色

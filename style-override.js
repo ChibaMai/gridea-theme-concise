@@ -16,6 +16,15 @@ const generateOverride = (params = {}) => {
     `
   }
 
+  // 置顶颜色
+  if (params.isTopColor && params.isTopColor !== '#f06595') {
+    result += `
+      .ant-isTop {
+        color: ${params.isTopColor} !important;
+      }
+    `
+  }
+
   // 封面图圆角 - featureBorderRadius
   if (params.featureBorderRadius && params.featureBorderRadius !== '3px') {
     result += `
@@ -30,6 +39,8 @@ const generateOverride = (params = {}) => {
       ${params.customCss}
     `
   }
+  
+  // $("html").attr("data-theme", ` <%= site.customConfig.theme%> `);
 
   console.log('result', result)
 

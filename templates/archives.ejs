@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+  lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
+  data-theme="<%- site.customConfig.theme %>"
+>
 <head>
   <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
 </head>
@@ -14,7 +17,9 @@
         <%- include('./includes/post-list-archives') %>
         <%- include('./includes/pagination') %>
       </main>
+      <%- include('./includes/small') %>
     </section>
+    <%- include('./includes/back-top') %> 
   </div>
 </body>
 </html>

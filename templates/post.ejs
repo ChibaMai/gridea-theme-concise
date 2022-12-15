@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+  lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
+  data-theme="<%- site.customConfig.theme %>"
+>
 <head>
   <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
 </head>
@@ -17,7 +20,10 @@
             <h1 class="ant-detail-post-title"><%= post.title %></h1>
             <!-- 时间 标签 -->
             <div class="ant-detail-post-info">
-              <time class="ant-detail-post-time"><%= post.dateFormat %></time>
+              <time class="ant-detail-post-time">
+                <i class="fa-solid fa-calendar-days"></i> 
+                <%= post.dateFormat %>
+              </time>
               <% post.tags.forEach(function(tag) { %>
                 <a href="<%= tag.link %>" class="ant-detail-post-tags"><%= tag.name %></a>
               <% }); %>
@@ -57,7 +63,9 @@
         <% } %>
 
       </main>
+      <%- include('./includes/small') %>
     </section>
+    <%- include('./includes/back-top') %> 
   </div>
 </body>
 </html>

@@ -28,7 +28,7 @@
   .ant-row {
     font-size: @ant-post-ant-row;
     display: flex;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .readmore-link {
@@ -40,16 +40,31 @@
       border-top-left-radius: 255px 15px;
       border-top-right-radius: 15px 225px;
       transition: all 235ms ease 0s;
-      box-shadow: 15px 28px 25px -18px rgb(0 0 0 / 20%);
+      box-shadow: 0px 20px 20px -18px rgb(0, 0, 0, .2);
       transition: all 235ms ease-in-out 0s;
       align-self: center;
       background: transparent;
+      border: 2px solid #41403e;
       color: #41403e;
       cursor: pointer;
       display: inline-block;
       outline: none;
       padding: 8px 5px;
+
+      &:hover {
+        transform: translate3d(0, 5px, 0);
+        box-shadow: 0 10px 10px -5px rgb(0, 0, 0, .4);
+      }
     }
+  }
+
+  // 置顶
+  .ant-isTop {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    font-size: 20px;
+    color: @ant-isTop;
   }
   
   // 翻页

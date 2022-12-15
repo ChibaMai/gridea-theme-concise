@@ -1,0 +1,111 @@
+// dark
+[data-theme=dark] {
+
+  body, html {
+    color: @dark-main-color;
+    background-color: @dark-main-background;
+  }
+
+  // 左侧菜单
+  .ant-layout-sider-light {
+    background-color: @dark-main-background;
+
+    li {
+      &:hover {
+        background-color: @dark-main-a-background-hover;
+      }
+    }
+
+  }
+
+  // 内容
+  .main {
+    background-color: @dark-main-background;
+
+    // 标题
+    :where(
+      .ant-tags-title, 
+      .ant-post-title,
+      .ant-archives-father, 
+      .ant-tag-title, 
+      .ant-detail-post-title 
+    ) {
+      color: @dark-main-color;
+    }
+
+    // ant-post-detail 内容
+    .ant-post-detail {
+
+      a {
+        color: @dark-main-a-color;
+
+        &:hover {
+          color: @dark-main-a-color-hover !important;
+          opacity: 1;
+        }
+      }
+    }
+
+    blockquote {
+      background-color: rgb(30, 40, 50);
+    }
+
+    // code 
+    code {
+      background-color: @dark-main-code !important;
+      color: rgb(233, 74, 147);
+
+      .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag {
+        color: rgb(51, 125, 255);
+      }
+
+      .hljs-string, .hljs-title, .hljs-section, .hljs-attribute, .hljs-literal, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-addition {
+        color: rgb(234, 96, 96);
+      }
+    }
+
+    // table tr td border-color
+    table,th ,tr, td {
+      border-color: @dark-main-border-color;
+    }
+  }
+
+  // border
+  :is(.ant-post, .ant-archives, .ant-tags, .ant-tag, .ant-post-detail),
+  .ant-header {
+    border-color: @dark-main-border-color;
+  }
+
+  // ant-tag
+  .ant-tag {
+    color: @dark-main-color;
+  }
+
+  // ant-small
+  .ant-small {
+    background-color: rgba(0, 0, 0, .8);
+  }
+
+  // .back-to-top
+  .back-to-top {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: @dark-main-color !important;
+  }
+
+  button {
+    box-shadow: rgb(0, 0, 0, 20%) 15px 28px 25px -18px !important;
+    background-image: initial !important;
+    background-color: transparent !important;
+    border-color: rgb(119, 111, 98) !important;
+    color: rgb(192, 186, 178) !important;
+    outline-color: initial !important;
+  }
+
+  a {
+    color: @dark-main-color;
+
+    &:hover {
+      color: @dark-main-a-color !important;
+    }
+  }
+}

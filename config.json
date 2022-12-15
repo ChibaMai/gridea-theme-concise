@@ -12,6 +12,15 @@
     "note": "可填像素类型（如：320px）或百分比类型（如：38.2%）"
   },
   {
+    "name": "isTopColor",
+    "label": "置顶颜色",
+    "group": "外观 | 渲染",
+    "value": "#f06595",
+    "type": "input",
+    "card": "color",
+    "note": "颜色字符串:（如：#EEEEEE、rgba(255, 255, 255, 0.9)）"
+  },
+  {
     "name": "theme",
     "label": "主题配色方案",
     "group": "外观 | 渲染",
@@ -28,6 +37,14 @@
         "value": "dark"
       }
   ]},
+  {
+    "name": "lang",
+    "label": "<html> lang 属性，默认设置为(en)",
+    "group": "外观 | 渲染",
+    "value": "en",
+    "type": "input",
+    "note": "默认设置为en"
+  },
   {
     "name": "github",
     "label": "Github",
