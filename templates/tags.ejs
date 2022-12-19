@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html 
   lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
-  data-theme="<%- site.customConfig.theme %>"
+  data-theme="<%- site.customConfig.theme ? site.customConfig.theme : "light" %>"
 >
 <head>
   <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
@@ -28,20 +28,7 @@
       <%- include('./includes/small') %>
     </section>
     <%- include('./includes/back-top') %> 
+    <!-- <%- include('./includes/load.ejs') %> -->
   </div>
-  <script>
-    // 标签随机颜色
-    $(".ant-tag").each((index, element) => {
-      let red = getRand(0, 255);
-      let green = getRand(0, 255);
-      let blue = getRand(0, 255);
-      let alpha = Math.floor(Math.random() * 5 + 1);
-      $(".ant-tag")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
-    })
-
-    function getRand(a, b){
-      return Math.floor(Math.random() * (b - a) + 1) + a
-    }
-  </script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 // dark
+
 [data-theme=dark] {
+// @media (prefers-color-scheme: dark) {
 
   body, html {
     color: @dark-main-color;
@@ -76,6 +78,19 @@
     border-color: @dark-main-border-color;
   }
 
+  // .ant-post-directory-fields
+  .ant-post-directory-fields {
+    color: rgba(232, 230, 227, 0.87) !important;
+    
+    .markdownIt-TOC, .ant-directory-fields {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    a {
+      color: rgba(232, 230, 227, 0.87) !important;
+    }
+  }
+
   // ant-tag
   .ant-tag {
     color: @dark-main-color;
@@ -87,9 +102,12 @@
   }
 
   // .back-to-top
-  .back-to-top {
-    background-color: rgba(0, 0, 0, 0.6);
+  .rightMenu {
     color: @dark-main-color !important;
+
+    div {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
   }
 
   button {

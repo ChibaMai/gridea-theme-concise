@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html 
   lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
-  data-theme="<%- site.customConfig.theme %>"
+  data-theme="<%- site.customConfig.theme ? site.customConfig.theme : "light" %>"
 >
 <head>
   <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
@@ -36,6 +36,13 @@
             <!-- 文章内容 -->
             <div class="ant-detail-post-content">
               <%- post.content %>
+              <!-- 文章目录字段 -->
+              <!-- <div class="ant-post-directory-fields">
+                <div class="ant-directory-fields">
+                  <i class="fa-regular fa-square-list"></i>
+                </div>
+                <%- post.toc %>
+              </div> -->
             </div>
           </article>
         </div>
@@ -66,21 +73,19 @@
       <%- include('./includes/small') %>
     </section>
     <%- include('./includes/back-top') %> 
+    <!-- <%- include('./includes/load.ejs') %> -->
   </div>
 </body>
 </html>
 
 <script>
-  // 标签随机颜色
-  $(".ant-detail-post-tags").each((index, element) => {
-    let red = getRand(0, 255);
-    let green = getRand(0, 255);
-    let blue = getRand(0, 255);
-    let alpha = Math.floor(Math.random() * 5 + 1);
-    $(".ant-detail-post-tags")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
-  })
+  $(function () {
+    $(".ant-directory-fields").click(function (e) { 
+      e.preventDefault();
 
-  function getRand(a, b){
-    return Math.floor(Math.random() * (b - a) + 1) + a
-  }
+      $(".ant-directory-fields+.markdownIt-TOC").stop().slideToggle(300, function () {
+        
+      });
+    });
+  })
 </script>

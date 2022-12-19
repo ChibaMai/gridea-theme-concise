@@ -1,45 +1,59 @@
 <style>
-  .back-to-top {
-    width: 45px;
-    height: 35px;
+  .rightMenu {
     position: fixed;
     right: 26px;
     bottom: 50px;
     z-index: 9;
-    background-color: rgb(85, 104, 246, .5);
     color: #fff;
     font-size: 19px;
-    cursor: pointer;
   }
 
-  .top {
+  :where(
+    .back-to-top,
+    .set-up,
+    .theme-switching
+  ) {
+    width: 45px;
+    height: 35px;
+    background-color: rgb(85, 104, 246, .5);
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 4px;
+    margin-block-start: 4px !important;
+    cursor: pointer;
   }
+
+  .hideRightMenu {
+    display: none;
+  }
+
 </style>
 
-<div class="back-to-top top" style="display: none">
-  <i class="fa-solid fa-arrow-up-to-line"></i>
+<div class="rightMenu">
+  <!-- 菜单 -->
+  <div class="hideRightMenu">
+    <!-- 切换主题 -->
+    <div class="theme-switching">
+      <i class="fa-solid fa-sun-bright"></i>
+      <!-- <i class="fa-solid fa-moon"></i> -->
+    </div>
+  </div>
+  <!-- 设置 -->
+  <div class="set-up">
+    <i class="fa-regular fa-gear"></i>
+  </div>
+  <!-- 返回顶部 -->
+  <div class="back-to-top top" style="display: none">
+    <i class="fa-solid fa-arrow-up-to-line"></i>
+  </div>
 </div>
 
 <script>
-  $(function () {
-    $('.back-to-top').hide();
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= 200) {
-        $('.back-to-top').fadeIn();
-      }
-      else {
-        $('.back-to-top').fadeOut();
-      }
-    });
-  });
-
-  $('.back-to-top').click(function () {
-    $('html,body').stop().animate({ 
-      scrollTop: 0 
-    }, '0.2s cubic-bezier(1, 0.14, 1, 0.56)');
-  });
+// 返回顶部
+$('.back-to-top').click(function () {
+  $('html,body').stop().animate({ 
+    scrollTop: 0 
+  }, '0.2s cubic-bezier(1, 0.14, 1, 0.56)');
+});
 </script>

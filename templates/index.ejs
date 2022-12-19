@@ -1,7 +1,7 @@
 <!DOCTYPE >
 <html 
   lang="<%- site.customConfig.lang ? site.customConfig.lang : "en" %>" 
-  data-theme="<%- site.customConfig.theme %>"
+  data-theme="<%- site.customConfig.theme ? site.customConfig.theme : "light" %>"
 >
 <head>
   <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
@@ -20,5 +20,6 @@
     </section>
     <%- include('./includes/back-top') %> 
   </div>
+  <!-- <%- include('./includes/load.ejs') %> -->
 </body>
 </html>

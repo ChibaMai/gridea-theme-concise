@@ -40,18 +40,3 @@
     </article>
   <% }); %>
 </div>
-
-<script>
-  // 标签随机颜色
-  $(".ant-post-tag").each((index, element) => {
-    let red = getRand(0, 255);
-    let green = getRand(0, 255);
-    let blue = getRand(0, 255);
-    let alpha = Math.floor(Math.random() * 5 + 1);
-    $(".ant-post-tag")[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.${alpha})`
-  })
-
-  function getRand(a, b){
-    return Math.floor(Math.random() * (b - a) + 1) + a
-  }
-</script>

@@ -29,6 +29,52 @@
     border-radius: 2px;
   }
 
+  //  文章目录字段  ant-post-directory-fields   markdownIt-TOC 
+  .ant-post-directory-fields {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    user-select: none;
+
+    .ant-directory-fields {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      background-color: rgba(85, 104, 246, .5);
+      color: white;
+      font-size: 19px;
+      position: fixed;
+      right: 30px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    a {
+      color: white !important;
+    }
+    
+    .markdownIt-TOC {
+      display: none;
+      background-color: rgba(85, 104, 246, .5);
+      border-radius: 4px;
+      padding: 10px;
+      border-radius: 4px;
+
+      ol, ul, li {
+        list-style-type: none;
+      }
+
+      ul {
+        padding-inline-start: 15px;
+      }
+
+      li {
+        margin-block: 5px;
+      }
+    }
+  }
+
   // 文章内容
   .ant-detail-post-content {
 

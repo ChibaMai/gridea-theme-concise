@@ -24,7 +24,7 @@
 </div>
 <div class="ant-small"></div>
 
-<script>
+<script type="module">
 $(function () {
 
   $(window).resize(function () {
@@ -38,17 +38,25 @@ $(function () {
   $(".ant-small-menu").click(function (e) { 
     e.preventDefault();
     
-    $(".ant-small").fadeIn(500);
-    $(".ant-layout-sider-light").css("margin-inline-start", "0");
+    $(".ant-small").fadeIn('slow');
+    // $(".ant-layout-sider-light").css("margin-inline-start", "0");
+    $(".ant-layout-sider-light").animate({
+      'margin-inline-start': 0
+    }, 'slow');
     $("body").css("overflow", "hidden")
   });
 
   $(".ant-small").click(function (e) { 
     e.preventDefault();
     
-    $(this).fadeOut(500);
+    $(this).fadeOut('slow');
     $("body").attr("style", "");
-    $(".ant-layout-sider-light").css("margin-inline-start", "-250px");
+    // $(".ant-layout-sider-light").css("margin-inline-start", "-250px");
+    $(".ant-layout-sider-light").animate({
+      'margin-inline-start': -250
+    }, 'slow');
   });
+
 });
+
 </script>

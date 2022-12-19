@@ -450,7 +450,6 @@ body,
 }
 :where(
   .ant-tags-title,
-  // .ant-post-title,
   .ant-archives-father,
   .ant-tag-title,
   .ant-detail-post-title
@@ -487,6 +486,7 @@ body,
   padding-block: 15px;
   padding-inline: 15px;
   border-bottom: 1px solid #c1c0bd;
+  text-align: center;
 }
 .ant-header a {
   display: inline-block;
@@ -499,17 +499,14 @@ body,
   height: 100%;
 }
 .ant-header .ant-title {
-  float: right;
-  width: calc(100% - 60px);
-  line-height: 60px;
-  text-align: center;
   font-size: 32px;
-  display: block;
+  word-break: break-all;
+  white-space: pre-wrap;
+  margin-block-start: 15px;
 }
 .ant-header .ant-description {
   padding-top: 20px;
-  text-align: center;
-  font-size: 16px;
+  font-size: 14px;
 }
 .sider-menu .ant-menu-container {
   padding: 0 20px;
@@ -618,6 +615,45 @@ body,
   background-position: center;
   margin-bottom: 24px;
   border-radius: 2px;
+}
+.ant-post-article .ant-post-directory-fields {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  user-select: none;
+}
+.ant-post-article .ant-post-directory-fields .ant-directory-fields {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: rgba(85, 104, 246, 0.5);
+  color: white;
+  font-size: 19px;
+  position: fixed;
+  right: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.ant-post-article .ant-post-directory-fields a {
+  color: white !important;
+}
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC {
+  display: none;
+  background-color: rgba(85, 104, 246, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+}
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC ol,
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC ul,
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC li {
+  list-style-type: none;
+}
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC ul {
+  padding-inline-start: 15px;
+}
+.ant-post-article .ant-post-directory-fields .markdownIt-TOC li {
+  margin-block: 5px;
 }
 .ant-post-article .ant-detail-post-content a {
   color: #1400ee;
@@ -1786,7 +1822,9 @@ body,
   .ant-layout-sider-light,
   .scroll-bar
 ) {
-  transition: all 0.5s cubic-bezier(0.59, 0.19, 0.68, 0.69);
+  _transition-duration: 300ms;
+  _transition-timing-function: cubic-bezier(0.59, 0.19, 0.68, 0.69);
+  _transition-property: all;
 }
 @media (max-width: 750px) {
   .ant-layout .ant-layout-sider-light {
@@ -1867,15 +1905,27 @@ body,
 [data-theme=dark] .ant-header {
   border-color: #42484a;
 }
+[data-theme=dark] .ant-post-directory-fields {
+  color: rgba(232, 230, 227, 0.87) !important;
+}
+[data-theme=dark] .ant-post-directory-fields .markdownIt-TOC,
+[data-theme=dark] .ant-post-directory-fields .ant-directory-fields {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+[data-theme=dark] .ant-post-directory-fields a {
+  color: rgba(232, 230, 227, 0.87) !important;
+}
 [data-theme=dark] .ant-tag {
   color: rgba(232, 230, 227, 0.87);
 }
 [data-theme=dark] .ant-small {
   background-color: rgba(0, 0, 0, 0.8);
 }
-[data-theme=dark] .back-to-top {
-  background-color: rgba(0, 0, 0, 0.6);
+[data-theme=dark] .rightMenu {
   color: rgba(232, 230, 227, 0.87) !important;
+}
+[data-theme=dark] .rightMenu div {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 [data-theme=dark] button {
   box-shadow: #000000 15px 28px 25px -18px !important;
