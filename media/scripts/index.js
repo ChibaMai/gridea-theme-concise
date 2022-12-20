@@ -39,58 +39,5 @@ $(document).ready(function () {
     
     $(".hideRightMenu").stop().slideToggle(300);
   });
-
-  // 主题手动切换
-  $(".theme-switching").click(function (e) { 
-    e.preventDefault();
-
-    if (Cookies.get("data-theme") === 'light') {
-      $("html").attr("data-theme", ColorScheme(true));
-    } else {
-      $("html").attr("data-theme", ColorScheme(false));
-    }
-  })
-
-  window.onload = function () {
-    $("html").attr("data-theme", Cookies.get("data-theme"));
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", event => {
-      ColorScheme(event.matches)
-    });
-
-    if (Cookies.get("data-theme") === 'light') {
-      themeSwitching(false)
-    } else {
-      themeSwitching(true)
-    }
-    
-  }
-
-  // 主题自动切换
-  function ColorScheme(judgment) {
-    if (judgment) {
-      // console.log("dark");
-      Cookies.set("data-theme", "dark");
-      $("html").attr("data-theme", "dark");
-      themeSwitching(judgment)
-    } else {
-      // console.log("light");
-      Cookies.set("data-theme", "light");
-      $("html").attr("data-theme", "light");
-      themeSwitching(judgment)
-    }
-
-    return
-  }
-
-  function themeSwitching(isTheme) {
-    if (isTheme) {
-      // 太阳
-      $(".theme-switching i").removeClass('fa-moon').addClass('fa-sun-bright')
-    } else {
-      // 月亮
-      $(".theme-switching i").removeClass('fa-sun-bright').addClass('fa-moon')
-    }
-  }
   
 });
